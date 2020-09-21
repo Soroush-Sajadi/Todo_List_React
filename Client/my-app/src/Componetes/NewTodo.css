@@ -1,0 +1,37 @@
+.make-new-todo-wrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 18vh
+}
+.make-new-todo-input {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: .2vh solid blueviolet;
+    width: 60vh;
+    
+}
+.make-new-todo-input:focus {
+    outline: none;
+    
+}
+.make-new-todo-input::placeholder {
+    text-align: center;
+}
+.make-new-todo-button {
+    border: none;
+    width: 8vh;
+    height: 3.5vh;
+    margin-top: 1vh;
+    background-color: blueviolet;
+    color:white;
+    cursor: pointer;
+}
+.make-new-todo-button:focus {
+    outline: none;
+    
+   
+    
+}
