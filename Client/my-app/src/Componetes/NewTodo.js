@@ -6,20 +6,20 @@ const NewTodo = () => {
     const [ todo, setTodo ] = useState('');
     const [ data, setData ] = useState([]);
 
-    const checkedItem = (id) => {
+    const todoIsChecked = (id) => {
         data.map(item => {
-            if( item.id === Number(id)) {
-                item.complete = !item.complete
-                setData(data => [...data])
+            if(item.id === Number(id)) {
+                item.complete = !item.complete;
+                setData(data => [...data] )
                 localStorage.setItem('data',JSON.stringify(data))
             }
         })
     }
 
-    const deletedItem = (id) => {
+    const todoIsDeleted = (id) => {
         data.map((item, i) => {
-            if(item.id === Number(id)) {
-                data.splice(i, 1);
+            if(item.id === Number(id) ) {
+                data.splice(i, 1)
                 setData(data => [...data])
                 localStorage.setItem('data',JSON.stringify(data))
             }
@@ -27,22 +27,22 @@ const NewTodo = () => {
     }
 
     const getCheckedTodo = (childData) => {
-        checkedItem(childData)
+        todoIsChecked(childData);
     }
 
     const getDeletedTodo = (childData) => {
-        deletedItem(childData);
+        todoIsDeleted(childData)
     }
-   
+
     const addNewTodo = () => {
         data.push({text: todo, complete: false, id: Math.floor(Math.random() * 100000000) })
         setData(data => [...data]);
         localStorage.setItem('data',JSON.stringify(data))
     }
     useEffect(() => {
-        if (localStorage.getItem('data') !== null) {
+        if (localStorage.getItem !== null ) {
             setData(JSON.parse(localStorage.getItem('data')))
-        }
+        } 
     },[])
     return(
         <div className = "make-new-todo-wrapper">
